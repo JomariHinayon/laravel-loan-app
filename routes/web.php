@@ -28,3 +28,5 @@ Route::middleware([
 });
 
 Route::get('/redirect',[HomeController::class, 'redirect']);
+
+Route::get('/view_application',[AdminController::class, 'view_application']);

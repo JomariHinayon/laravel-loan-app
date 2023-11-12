@@ -39,6 +39,20 @@ h2 {
   font-family: 'Playfair Display', serif;
 }
 
+.home_logo_title {
+  font-size: 40px;
+  margin: 0px;
+  color: #002c3e;
+}
+
+.color-2 {
+  color: #f7444e;
+}
+
+.color-1 {
+  color: #002c3e;
+}
+
 .heading_container {
   display: -webkit-box;
   display: -ms-flexbox;
