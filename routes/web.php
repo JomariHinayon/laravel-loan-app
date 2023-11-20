@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +17,6 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/',[HomeController::class, 'index']);
 
 Route::middleware([
     'auth:sanctum',
@@ -27,6 +28,11 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('/redirect',[HomeController::class, 'redirect']);
+// Route::get('/redirect',[HomeController::class, 'redirect']);
+Route::get('/',[HomeController::class, 'index']);
 
-Route::get('/view_application',[AdminController::class, 'view_application']);
+
+// Admin
+Route::get('/admin/dashboard',[AdminController::class, 'view_dashboard'])->name('view_dashboard');
+Route::get('/admin/application',[AdminController::class, 'view_application'])->name('view_application');
+Route::get('/admin/application/new',[AdminController::class, 'view_new_application'])->name('view_new_application');
