@@ -10,6 +10,11 @@ body {
   overflow-x: hidden;
 }
 
+.login-btn {
+  background-color: transparent !important; 
+  color: #f7444e !important;
+}
+
 .layout_padding {
   padding: 70px 0;
 }
@@ -553,7 +558,7 @@ a:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 3;
+    z-index: 0;
 }
 
 .arrival_section .arrival_bg_box img {

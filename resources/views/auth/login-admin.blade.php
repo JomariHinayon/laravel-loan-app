@@ -2,7 +2,7 @@
     <x-authentication-card>
         <x-slot name="logo">
             <div div class="img-box">
-                <img src="assets/logo1.png" class="w-40" alt="logo">
+                <img src="../assets/logo1.png" class="w-40" alt="logo">
             </div>
         </x-slot>
 
@@ -13,10 +13,11 @@
                 {{ session('status') }}
             </div>
         @endif
-
         <form method="POST" action="{{ route('login') }}">
             @csrf
-
+            <div class="my-5 text-center">
+                <h4 class="text-md font-semibold">Admin Login</h4>
+            </div>
             <div>
                 <x-label for="email" value="{{ __('Email') }}" />
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
@@ -27,31 +28,11 @@
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
             </div>
 
-            <div class="block mt-4">
-                <label for="remember_me" class="flex items-center">
-                    <x-checkbox id="remember_me" name="remember" />
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
-
             <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
 
                 <x-button class="ml-4">
                     {{ __('Log in') }}
                 </x-button>
-            </div class="flex items-center justify-end mt-4">
-                <p class="text-sm text-center mt-4">
-                    Don't have an account yet?
-                    <span>
-                        <a class="text-blue-500" href="{{route('register')}}">Create Account</a>
-                    </span>
-                </p>
-            <div>
 
             </div>
         </form>
